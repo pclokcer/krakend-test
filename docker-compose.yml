@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+
+  krakend_ce:
+    image: devopsfaith/krakend:watch
+    command: ["run", "-d", "-c", "/etc/krakend/krakend.json"]
+    ports:
+      - 8090:8090 # loglama için
+      - 8080:8080
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json
